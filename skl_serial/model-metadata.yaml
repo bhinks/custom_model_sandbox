@@ -8,3 +8,12 @@ version:
   # Make sure this is the environment ID is in your system.
   # This one is the '[DataRobot] Python 3 Scikit-Learn Drop-In' environment
   model_environment_id: 5e8c889607389fe0f466c72d
+
+test:
+  checks:
+    null_value_imputation:
+      enabled: true
+      block_deployment_if_fails: true
+    side_effects:
+      enabled: true
+      block_deployment_if_fails: false
