@@ -14,8 +14,8 @@ test:
   test_data_id: 6311019b76f4117151b59cf3
   checks:
     null_value_imputation:
-      enabled: true
       block_deployment_if_fails: true
-    side_effects:
       enabled: true
-      block_deployment_if_fails: false
+    side_effects:
+      block_deployment_if_fails: true
+      enabled: true
