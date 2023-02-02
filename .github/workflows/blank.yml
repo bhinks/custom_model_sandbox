@@ -22,12 +22,12 @@ jobs:
         with:
           fetch-depth: 0
 
-          - name: DataRobot Custom Models Step
-            id: datarobot-custom-models-step
-            uses: datarobot-oss/custom-models-action@v1.1.8
-            with:
-              api-token: ${{ secrets.DATAROBOT_API_TOKEN }}
-              webserver: https://app.datarobot.com/
-              branch: main
-              allow-model-deletion: true
-              allow-deployment-deletion: true
+      - name: DataRobot Custom Models Step
+        id: datarobot-custom-models-step
+        uses: datarobot-oss/custom-models-action@v1.1.8
+        with:
+          api-token: ${{ secrets.DATAROBOT_API_TOKEN }}
+          webserver: https://app.datarobot.com/
+          branch: main
+          allow-model-deletion: true
+          allow-deployment-deletion: true
