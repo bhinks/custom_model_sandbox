@@ -10,11 +10,12 @@ version:
   model_environment_id: 5e8c889607389fe0f466c72d
 
 test:
+  skip: false
   test_data_id: 6311019b76f4117151b59cf3
-  # checks:
-  #   null_value_imputation:
-  #     enabled: true
-  #     block_deployment_if_fails: true
-  #   side_effects:
-  #     enabled: true
-  #     block_deployment_if_fails: false
+  checks:
+    null_value_imputation:
+      enabled: true
+      block_deployment_if_fails: true
+    side_effects:
+      enabled: true
+      block_deployment_if_fails: false
