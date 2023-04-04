@@ -34,7 +34,10 @@ def transform(data, model):
         "metformin.rosiglitazone": "metformin_rosiglitazone",
         "metformin.pioglitazone": "metformin_pioglitazone"
     })
-    df = df.drop(["readmitted", "diag_1", "diag_2", "diag_3", "diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
+    for target_col in ["readmitted", "diag_1", "diag_2", "diag_3", "diag_1_desc", "diag_2_desc", "diag_3_desc"]:
+        if target_col in df:
+            df.pop(target_col)
+    df = df.fillna(0)
 
     df.replace("None", np.nan, inplace=True)
     df.replace("No", 0, inplace=True)
