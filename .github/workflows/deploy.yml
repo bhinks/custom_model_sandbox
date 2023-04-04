@@ -26,6 +26,7 @@ jobs:
     - name: Commit changed files
       run: git commit -m "Auto check-in serialized model"
     - name: fetch from main
+      if: always()
       run: git fetch origin main
     - name: push code to main
       run: git push origin HEAD:main
