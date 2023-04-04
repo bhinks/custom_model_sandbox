@@ -7,7 +7,13 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv("data/10kDiabetes.csv")
 
-df = df.rename(columns={'glyburide.metformin': 'glyburide_metformin', 'glipizide.metformin': 'glipizide_metformin'})
+df = df.rename(columns={
+    "glyburide.metformin": "glyburide_metformin", 
+    "glipizide.metformin": "glipizide_metformin",
+    "glimepiride.pioglitazone": "glimepiride_pioglitazone",
+    "metformin.rosiglitazone": "metformin_rosiglitazone",
+    "metformin.pioglitazone": "metformin_pioglitazone"
+})
 
 df.replace("None", np.nan, inplace=True)
 df.replace("No", 0, inplace=True)
@@ -103,7 +109,7 @@ features = [
     "number_emergency", "number_inpatient", "number_diagnoses", "max_glu_serum_cat", "A1Cresult_cat",
     "metformin_cat", "repaglinide_cat", "nateglinide_cat", "chlorpropamide_cat", "glimepiride_cat", "acetohexamide", "glipizide_cat", "glyburide_cat",
     "tolbutamide_cat", "pioglitazone_cat", "rosiglitazone_cat", "acarbose_cat", "miglitol_cat", "troglitazone", "tolazamide_cat", "examide", "citoglipton",
-    "insulin_cat", "glyburide_metformin_cat", "glipizide_metformin_cat", "glimepiride.pioglitazone", "metformin.rosiglitazone", "metformin.pioglitazone",
+    "insulin_cat", "glyburide_metformin_cat", "glipizide_metformin_cat", "glimepiride_pioglitazone", "metformin_rosiglitazone", "metformin_pioglitazone",
     "change_cat", "diabetesMed"
 ]
 
