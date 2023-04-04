@@ -34,6 +34,7 @@ def transform(data, model):
         "metformin.rosiglitazone": "metformin_rosiglitazone",
         "metformin.pioglitazone": "metformin_pioglitazone"
     })
+    
     for target_col in ["readmitted", "diag_1", "diag_2", "diag_3", "diag_1_desc", "diag_2_desc", "diag_3_desc"]:
         if target_col in df:
             df.pop(target_col)
