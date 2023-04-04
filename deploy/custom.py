@@ -26,8 +26,11 @@ def transform(data, model):
     """
     # Execute any steps you need to do before scoring
     # Remove target columns if they're in the dataset
-    for target_col in ["readmitted"]:
-        if target_col in data:
-            data.pop(target_col)
-    data = data.fillna(0)
+    data = data.drop(['readmitted'], axis='columns',errors='ignore')
     return data
+
+def score(data, model, **kwargs):
+    output = model.predict_proba(data)
+    predictions = pd.DataFrame(output, columns=[0,1])
+
+    return predictions
