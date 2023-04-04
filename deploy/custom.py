@@ -26,7 +26,7 @@ def transform(data, model):
     """
     # Execute any steps you need to do before scoring
     # Remove target columns if they're in the dataset
-    for target_col in ["Grade 2014", "Species"]:
+    for target_col in ["Grade 2014", "Species", "readmitted"]:
         if target_col in data:
             data.pop(target_col)
     data = data.fillna(0)

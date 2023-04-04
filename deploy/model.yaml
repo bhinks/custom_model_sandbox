@@ -1,5 +1,5 @@
 user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model
-target_type: Classification
+target_type: Binary
 settings:
   name: Custom Diabetes [GitHub Actions]
   target_name: readmitted
