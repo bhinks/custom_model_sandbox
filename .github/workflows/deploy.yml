@@ -18,7 +18,8 @@ jobs:
       run: pip install pandas numpy scikit-learn
     - name: Train model
       run: python ./train_model.py
-
+    - name: Set git config
+      run: git config --global user.email "system@datarobot.com"; git config --global user.name "GitHub Actions"
     - name: Stage changed files
       run: git add .
     - name: Commit changed files
