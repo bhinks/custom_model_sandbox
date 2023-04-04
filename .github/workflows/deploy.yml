@@ -24,9 +24,9 @@ jobs:
     - name: Stage changed files
       run: git add .
     - name: Commit changed files
+      continue-on-error: true
       run: git commit -m "Auto check-in serialized model"
     - name: fetch from main
-      if: always()
       run: git fetch origin main
     - name: push code to main
       run: git push origin HEAD:main
