@@ -4,7 +4,7 @@ import pickle
 
 from sklearn.compose import make_column_transformer
 from sklearn.impute import SimpleImputer
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import make_pipeline
 from sklearn.pipeline import Pipeline
@@ -27,7 +27,7 @@ sim_num = SimpleImputer(missing_values = np.nan, strategy = 'mean')
 
 col_trans = make_column_transformer((categorical_transformer, ohe_features_to_encode), (sim_num, sim_num_features_to_encode), remainder = "passthrough")
 
-model = LogisticRegression()
+model = RandomForestClassifier(min_samples_leaf=50, n_estimators=150, bootstrap=True, oob_score=True, n_jobs=-1, random_state=1337, max_features='auto')
 
 pipe = make_pipeline(col_trans, model)
 pipe.fit(x_train,y_train)
