@@ -1,4 +1,5 @@
 name: DataRobot Test and Deploy
+permissions: write-all
 
 on:
   pull_request:
@@ -18,6 +19,8 @@ jobs:
       run: pip install pandas numpy scikit-learn
     - name: Train model
       run: python ./train_model.py
+    - name: switching from HTTPS to SSH
+      run: git remote set-url origin ${{secrets.ssh}}
     - name: Set git config
       run: git config --global user.email "system@datarobot.com"; git config --global user.name "GitHub Actions"
     - name: Stage changed files
@@ -32,6 +35,7 @@ jobs:
   datarobot-custom-models:
     # Run this job on any action of a PR, but skip the job upon merging to the main branch. This
     # will be taken care of by the push event.
+    needs: train
     if: ${{ github.event.pull_request.merged != true }}
 
     runs-on: ubuntu-latest
