@@ -116,7 +116,7 @@ features = [
 x = np.array(df[features])
 y = np.array(df["readmitted"])
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1337)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1337)
 
 model = LogisticRegression()
 model.fit(x_train, y_train)
