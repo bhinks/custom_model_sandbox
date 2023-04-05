@@ -15,5 +15,5 @@ def transform(data, model):
     orig_columns = set(pandas_schema.keys())
     for c in orig_columns.difference(columns):
         del pandas_schema[c]
-    data = data.astype(model.pandas_schema)
+    data = data.astype(pandas_schema)
     return data
