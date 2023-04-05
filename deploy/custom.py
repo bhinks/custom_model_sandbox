@@ -8,15 +8,6 @@ import pandas as pd
 
 def transform(data, model):
     data = data.drop(['readmitted'], axis='columns',errors='ignore')
-    data = data.rename(columns={
-        "glyburide.metformin": "glyburide_metformin", 
-        "glipizide.metformin": "glipizide_metformin",
-        "glimepiride.pioglitazone": "glimepiride_pioglitazone",
-        "metformin.rosiglitazone": "metformin_rosiglitazone",
-        "metformin.pioglitazone": "metformin_pioglitazone"
-    })
-    data = data.drop(["diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
-
     return data
 
 def score(data, model, **kwargs):

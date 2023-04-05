@@ -19,7 +19,6 @@ df = df.rename(columns={
     "metformin.rosiglitazone": "metformin_rosiglitazone",
     "metformin.pioglitazone": "metformin_pioglitazone"
 })
-df = df.drop(["diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
 
 x = df.drop(["readmitted"], axis=1)
 y = df["readmitted"]
