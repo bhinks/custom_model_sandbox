@@ -15,7 +15,7 @@ def transform(data, model):
         "metformin.rosiglitazone": "metformin_rosiglitazone",
         "metformin.pioglitazone": "metformin_pioglitazone"
     })
-    df = df.drop(["diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
+    data = data.drop(["diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
 
     return data
 
