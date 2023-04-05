@@ -7,7 +7,7 @@ Released under the terms of DataRobot Tool and Utility Agreement.
 import pandas as pd
 
 def transform(data, model):
-    data = data.drop(['readmitted'], axis='columns',errors='ignore')
+    data = data.drop(["readmitted", "diag_1_desc", "diag_2_desc", "diag_3_desc"], axis='columns',errors='ignore')
     return data
 
 def score(data, model, **kwargs):
