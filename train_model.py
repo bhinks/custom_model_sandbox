@@ -46,4 +46,3 @@ pipe.fit(x_train, y_train)
 pickle.dump(pipe, open("deploy/model.pkl", "wb"))
 
 output = pipe.predict_proba(df.drop(["readmitted"], axis=1))
-print(output)
