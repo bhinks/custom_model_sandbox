@@ -18,6 +18,7 @@ y = df["readmitted"]
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1337)
 
 ohe_features_to_encode = x_train.columns[x_train.dtypes==object].tolist()
+
 categorical_transformer = Pipeline(steps=[
     ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
     ('encoder', OneHotEncoder(handle_unknown='ignore'))])
@@ -35,3 +36,6 @@ pipe.fit(x_train,y_train)
 pipe.fit(x_train, y_train)
 
 pickle.dump(pipe, open("deploy/model.pkl", "wb"))
+
+output = pipe.predict_proba(df.drop(["readmitted"], axis=1))
+print(output)

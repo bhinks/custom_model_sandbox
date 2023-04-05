@@ -31,6 +31,6 @@ def transform(data, model):
 
 def score(data, model, **kwargs):
     output = model.predict_proba(data)
-    predictions = pd.DataFrame(output, columns=[0,1])
+    predictions = pd.DataFrame(output, columns=['False','True'])
 
     return predictions
