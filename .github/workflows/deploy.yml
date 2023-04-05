@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Install deps
-      run: pip install pandas numpy scikit-learn
+      run: pip install requirements.txt
     - name: Train model
       run: python ./train_model.py
     - name: Set git config
