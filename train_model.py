@@ -24,7 +24,7 @@ df = df.drop(["diag_1_desc", "diag_2_desc", "diag_3_desc"], axis=1)
 x = df.drop(["readmitted"], axis=1)
 y = df["readmitted"]
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=1337)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1337)
 
 ohe_features_to_encode = x_train.columns[x_train.dtypes==object].tolist()
 
