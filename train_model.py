@@ -12,6 +12,14 @@ from sklearn.preprocessing import OneHotEncoder
 
 df = pd.read_csv("data/10kDiabetes.csv")
 
+df = df.rename(columns={
+    "glyburide.metformin": "glyburide_metformin", 
+    "glipizide.metformin": "glipizide_metformin",
+    "glimepiride.pioglitazone": "glimepiride_pioglitazone",
+    "metformin.rosiglitazone": "metformin_rosiglitazone",
+    "metformin.pioglitazone": "metformin_pioglitazone"
+})
+
 x = df.drop(["readmitted"], axis=1)
 y = df["readmitted"]
 

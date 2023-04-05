@@ -27,6 +27,13 @@ def transform(data, model):
     # Execute any steps you need to do before scoring
     # Remove target columns if they're in the dataset
     data = data.drop(['readmitted'], axis='columns',errors='ignore')
+    data = data.rename(columns={
+        "glyburide.metformin": "glyburide_metformin", 
+        "glipizide.metformin": "glipizide_metformin",
+        "glimepiride.pioglitazone": "glimepiride_pioglitazone",
+        "metformin.rosiglitazone": "metformin_rosiglitazone",
+        "metformin.pioglitazone": "metformin_pioglitazone"
+    })
     return data
 
 def score(data, model, **kwargs):
