@@ -10,8 +10,8 @@ def transform(data, model):
     data = data.drop(["readmitted"], axis='columns',errors='ignore')
     return data
 
-def score(data, model, **kwargs):
-    output = model.predict_proba(data)
-    predictions = pd.DataFrame(output, columns=['False','True'])
+# def score(data, model, **kwargs):
+#     output = model.predict_proba(data)
+#     predictions = pd.DataFrame(output, columns=['False','True'])
 
-    return predictions
+#     return predictions
