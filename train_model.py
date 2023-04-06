@@ -1,3 +1,4 @@
+import json
 import numpy as np
 import pandas as pd
 import pickle
@@ -19,6 +20,15 @@ df = df.rename(columns={
     "metformin.rosiglitazone": "metformin_rosiglitazone",
     "metformin.pioglitazone": "metformin_pioglitazone"
 })
+
+with open("deploy/pandas_schema.json", "r") as f:
+    schema = f.readlines()[0]
+    pandas_schema = json.loads(schema)
+columns = set(df.columns)
+orig_columns = set(pandas_schema.keys())
+for c in orig_columns.difference(columns):
+    del pandas_schema[c]
+df = df.astype(pandas_schema)
 
 x = df.drop(["readmitted"], axis=1)
 y = df["readmitted"]
