@@ -51,8 +51,4 @@ model = RandomForestClassifier(min_samples_leaf=50, n_estimators=150, bootstrap=
 pipe = make_pipeline(col_trans, model)
 pipe.fit(x_train,y_train)
 
-pipe.fit(x_train, y_train)
-
 pickle.dump(pipe, open("deploy/model.pkl", "wb"))
-
-output = pipe.predict_proba(df.drop(["readmitted"], axis=1))
