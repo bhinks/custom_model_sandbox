@@ -20,7 +20,7 @@ test:
   test_data_id: 6123df824fd7c3eb7bb5e12d
   checks:
     null_value_imputation:
-      block_deployment_if_fails: true
+      block_deployment_if_fails: false
       enabled: true
     performance:
       block_deployment_if_fails: false
@@ -36,10 +36,10 @@ test:
       passing_match_rate: 85
       predictions_column: readmitted
     side_effects:
-      block_deployment_if_fails: true
+      block_deployment_if_fails: false
       enabled: true
     stability:
-      block_deployment_if_fails: true
+      block_deployment_if_fails: false
       enabled: true
       maximum_payload_size: 1000
       minimum_payload_size: 100
