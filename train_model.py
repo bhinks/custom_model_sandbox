@@ -42,7 +42,7 @@ categorical_transformer = Pipeline(steps=[
     ('encoder', OneHotEncoder(handle_unknown='ignore'))])
 
 sim_num_features_to_encode = list(x_train.select_dtypes(include = ['float64', 'int64']).columns)
-sim_num = SimpleImputer(missing_values = np.nan, strategy = "constant", fill_value=None)
+sim_num = SimpleImputer(missing_values = np.nan, strategy = "mean")
 
 col_trans = make_column_transformer((categorical_transformer, ohe_features_to_encode), (sim_num, sim_num_features_to_encode), remainder = "passthrough")
 
