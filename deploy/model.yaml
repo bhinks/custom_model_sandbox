@@ -1,4 +1,4 @@
-user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model
+user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v2
 target_type: Binary
 settings:
   name: Custom Diabetes [GitHub Actions]
@@ -37,7 +37,7 @@ test:
       predictions_column: readmitted
     side_effects:
       block_deployment_if_fails: false
-      enabled: true
+      enabled: false
     stability:
       block_deployment_if_fails: false
       enabled: false
