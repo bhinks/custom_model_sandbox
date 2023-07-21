@@ -1,7 +1,7 @@
-user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v4
+user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v5
 target_type: Binary
 settings:
-  name: Custom Diabetes v4 [GitHub Actions]
+  name: Custom Diabetes v5 [GitHub Actions]
   target_name: readmitted
   description: Custom sklearn diabetes model
   language: Python

@@ -1,3 +1,12 @@
-user_provided_deployment_id: datarobot/brent.hinks/diabetes_sklearn_deployment_v4
-user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v4
+user_provided_deployment_id: datarobot/brent.hinks/diabetes_sklearn_deployment_v5
+user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v5
 prediction_environment_name: "https://datarobot-support.orm.datarobot.com"
+
+settings:
+  label: "Custom sklearn diabetes model"
+  description: "This is a more detailed description."
+  importance: LOW
+  enable_target_drift: true
+  enable_feature_drift: true
+  enable_predictions_collection: true
+  enable_challenger_models: true
