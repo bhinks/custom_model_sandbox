@@ -1,6 +1,6 @@
 user_provided_deployment_id: datarobot/brent.hinks/diabetes_sklearn_deployment_v5
 user_provided_model_id: datarobot/brent.hinks/diabetes_sklearn_model_v5
-prediction_environment_name: "https://datarobot-support.orm.datarobot.com"
+prediction_environment_name: "https://datarobot-cfds.dynamic.orm.datarobot.com"
 
 settings:
   label: "Custom sklearn diabetes model"
